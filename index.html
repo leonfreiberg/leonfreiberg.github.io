@@ -7,16 +7,17 @@
 .grid-container {
   display: grid;
   grid-template-columns: auto auto;
-  gap: 10px;
-  background-color: #9e9e9e;
-  padding: 10px;
+  background-color: #000000;
 }
 
 .grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid black;
-  text-align: center;
-  font-size: 30px;
+  place-self: center;
+  font-size: 30px; 
+}
+
+.text{
+  color: #ffffff ;
+  font-family: Monospace;
 }
 </style>
 </head>
@@ -27,7 +28,11 @@
     <!--First Element-->
   <div><video loop="true" muted autoplay width="800" height="500"  id="videoElement" src="assets/robot.mp4"></video></div>
 
+  <div><b class="text">Dauerrotation</b></div>
+
    <!--Second Element-->
+   <div><b class="text">Videosteuerung</b></div>
+
   <div><video controls width="800" height="500" id="videoElement" loop src="assets/robot.mp4"></video>
     <script>
         var vid = document.getElementById("videoElement");
@@ -35,9 +40,8 @@
     </script> </div>
 
     <!--Third Element-->
-    <div>
-        <video width="800" height="500"  id="video_mouse" preload src="assets/robot.mp4"></video>
-
+    <div><video width="800" height="500"  id="video_mouse" preload src="assets/robot.mp4"></video>
+        
     <script>
     $(document).ready(function(){
         var mouseX;
@@ -52,14 +56,14 @@
     });
         } 
     });
-});
+});</script></div>
 
-       </script>
-
-    </div>
-
-  <div>
-    <video width="800" height="500"  id="video_scroll" preload src="assets/robot.mp4"></video>
+    <div><b class="text">Drehung mittels Mausposition -> Video</b></div>
+  
+   <!--Fourth Element-->
+   <div><b class="text">Drehung mittels Mausrad -> Video</b></div>
+    
+   <div><video width="800" height="500"  id="video_scroll" preload src="assets/robot.mp4"></video>
 
     <script>
 var video = $('#video_scroll').get(0);
@@ -92,6 +96,87 @@ else if (videoPosition > 5){videoPosition = 0}
 }
     </script>
   </div>  
+
+
+  <!--Fifth Element-->
+  <div>
+    <body>  <a  target="_blank" class="video-preview" data-frames="60" data-source="assets/Robot_h.jpg"></a></body>  
+<style>
+
+  body {
+    
+    
+}
+body > div {/*
+    display: inline-block;*/
+}
+
+.video-preview {
+    display: inline-block;
+    position: relative;
+    background: #ddd;
+    overflow: hidden;
+    /* This is temporary width and height, these'll be overriden when the source img is loaded. */
+    /* If you already know size of a preview frame you can hardcode it here. */
+    width: 160px;
+    height: 500px;
+   
+}
+</style>
+    <script>
+(function($) {
+    $.fn.videoPreview = function(options) {
+        return this.each(function() {
+            var elm = $(this);
+            var frames = parseFloat(elm.data('frames'));
+            
+            var img = $('<img/>', { 'src': elm.data('source') }).hide().css({
+                'position': 'absolute',
+                'cursor': 'pointer'
+            }).appendTo(elm);
+            var slider = $('<div/>').hide().css({
+                'width': '2px',
+                'height': '100%',
+                'background': '#ddd',
+                'position': 'absolute',
+                'z-index': '1',
+                'top': '0',
+                'opacity': 0.6,
+                'cursor': 'pointer'
+            }).appendTo(elm);
+            
+            var width;
+            
+            function defaultPos() {
+                img.css('left', -width * frames / 4);
+            }
+            
+            img.load(function() {
+                $(this).show();
+                width = this.width / frames;
+                elm.css('width', width);
+                defaultPos();
+            });
+            elm.mousemove(function(e) {
+                var left = e.clientX - elm.position().left;
+                slider.show().css('left', left - 1); // -1 because it's 2px width
+                img.css('left', -Math.floor((left / width) * frames) * width);
+            }).mouseleave(function(e) {
+                slider.hide();
+            });
+            
+        });
+    };
+})(jQuery);
+
+$('.video-preview').videoPreview();
+
+    </script>
+  </div>
+
+    <div><b class="text">Drehung mittels Mausposition -> Frames</b></div>
+
+ 
 
   
 
