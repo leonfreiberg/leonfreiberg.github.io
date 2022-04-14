@@ -6,15 +6,12 @@ Donate to remove backlink form the template.
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600);
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
+
 .page-section {
 	width: 100%;
 	height: auto;
 	padding: 65px 0;
 }
-.noPadd {
-	padding: 0;
-}
-
 /***************************************/
 .colord {
 	background: #23CA9D;
@@ -28,13 +25,12 @@ Donate to remove backlink form the template.
 }
 
 
-
+/*  
+    -------------------------------------------------*/
 img, video, iframe, embed, object {
 	max-width: 100%;
 	height: auto;
 }
-/*  
-    -------------------------------------------------*/
 
 #aboutUs {
 	background: #FFFFFF;
