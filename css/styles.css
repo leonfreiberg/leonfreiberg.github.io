@@ -10,18 +10,19 @@ Donate to remove backlink form the template.
 .page-section {
 	width: 100%;
 	height: auto;
-	padding: 65px 0;
+	padding: 15px;
 }
 /***************************************/
 .colord {
-	background: #23CA9D;
 	background: #4a97f0;
 }
 .colord p {
 	color: #FFFFFF;
+	
 }
 .colord h3 {
-	color: #000;
+	color: rgb(255, 255, 255);
+	font-size: xx-large;
 }
 
 
@@ -34,13 +35,14 @@ img, video, iframe, embed, object {
 
 #aboutUs {
 	background: #FFFFFF;
-	padding-top: 35px;
+	padding-top: 0px;
 	padding-bottom: 25px;
 	overflow: hidden;
-	color: #4a97f0;
+	
 }
 #aboutUs p{
 color: #212C29;
+font-size: large;
 }
 #aboutUs .feature {
 	margin-top: 30px;
@@ -54,13 +56,14 @@ color: #212C29;
 	padding-right: 32px;
 	float: left;
 }
-#aboutUs h3 {
-	font: 18px/34px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	color: #222;
+#aboutUs h2 {
+	font-size: xx-large;
+	color: #4a97f0;
+
+	letter-spacing: 2px;
+
 }
 .row .six {
-	width: 50%;
+	width: 100%;
 }
 
