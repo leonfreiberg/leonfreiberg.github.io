@@ -18,9 +18,9 @@
 </head>
 
 <body>
-  <model-viewer id="scotter" camera-controls enable-pan src="scotter_variants.gltf" ar ar-modes="webxr scene-viewer quick-look" poster="poster.webp" alt="A 3D model of a scotter" shadow-intensity="1" camera-orbit="20.16deg 77.52deg auto">
+  <model-viewer id="scotter" enable-pan camera-controls src="scotter_variants_binaer.glb" ar ar-modes="webxr scene-viewer quick-look" poster="poster.webp" alt="A 3D model of a scotter" shadow-intensity="1" camera-orbit="20.16deg 77.52deg auto">
     <div class="controls">
-      <div>Variante: <select id="variant"></select></div>
+      <div>Varianten: <select id="variant"></select></div>
     </div>
   </model-viewer>
   <script>
@@ -35,6 +35,11 @@
       option.textContent = name;
       select.appendChild(option);
     }
+    // Adds a default option.
+    const option = document.createElement('option');
+      option.value = 'default';
+      option.textContent = 'Default';
+      select.appendChild(option);
   });
   
   select.addEventListener('input', (event) => {
