@@ -1,41 +1,39 @@
-
 <!doctype html>
-
 <html lang="en">
-
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Model Viewer</title>
-
-<style>
-  model-viewer{
-    width: 100%;
-   height:90vh;
-   margin: 0 auto;
-
-
-  }
-</style>
+  <title>Globe</title>
+  <meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="assets/StyleSheet copy.css">
+  <style>
+    body,
+    html,
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0
+    }
+  </style>
 </head>
 
 <body>
 
+  <style scoped>
+    model-viewer::part(default-ar-button) { background-image:url(assets/ar_button.svg) ;}
+    table-poster {background-image: url("assets/poster.webp");}
+  </style>
 
-    <!-- poster="poster.webp" -->
-    <model-viewer bounds="tight" src="Globe.glb"  ar ar-modes="webxr scene-viewer quick-look"  camera-controls environment-image="neutral" shadow-intensity="1">
-      
+  <model-viewer 
+      src="models/Globe.glb"
+      id="char" 
+      reveal="interaction"
+      ar ar-modes="webxr scene-viewer quick-look" 
+      camera-controls pan-control 
+      shadow-intensity="1">
 
-    </model-viewer>  
-    <!-- <button onclick="myFunction()" class="btn btn-default">Take a Screenshot!</button> -->
-
-  <!-- <model-viewer> HTML element -->
-
-  <!-- Loads <model-viewer> for browsers: -->
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+      <div class="table-poster" slot="poster"></div>
+      <div class="button-load" slot="poster">Load 3D Model</div>
+  </model-viewer>
 </body>
-
-
-
-
 </html>
