@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Jet</title>
+  <meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="../assets/style/StyleSheet.css">
+  <style>
+    body,
+    html,
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0
+    }
+  </style>
+</head>
+<style scoped>
+  #table-poster {background-image: url("assets/poster.webp");}
+</style>
+
+  <model-viewer 
+      src="assets/3d-model/model.glb"
+      id="model" 
+      reveal="auto"
+      ar ar-modes="webxr scene-viewer quick-look" ar-scale="50"
+      camera-controls pan-control 
+      camera-orbit="33.72deg 77.04deg auto"
+      shadow-intensity="1">
+
+      <div id="table-poster" slot="poster"></div>
+      <button slot="ar-button" id="ar-button"></button>
+
+  </model-viewer>
+</body>
+</html>
