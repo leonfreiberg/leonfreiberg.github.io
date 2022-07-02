@@ -4,7 +4,7 @@
   <title>Jet</title>
   <meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <link rel="stylesheet" href="../assets/style/StyleSheet.css">
+  <link rel="stylesheet" href="./general_assets/style/StyleSheet.css">
   <style>
     body,
     html,
@@ -24,9 +24,10 @@
       src="assets/3d-model/model.glb"
       id="model" 
       reveal="auto"
-      ar ar-modes="webxr scene-viewer quick-look" ar-scale="50"
+      ar ar-modes="webxr scene-viewer quick-look" ar-scale="auto"
       camera-controls pan-control 
       camera-orbit="33.72deg 77.04deg auto"
+      environment-image="neutral"
       shadow-intensity="1">
 
       <div id="table-poster" slot="poster"></div>
