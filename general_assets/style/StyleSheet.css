@@ -88,4 +88,40 @@
     visibility: hidden;
 }
 
+
+ button{
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 6px;
+    border: none;
+    background-color: white;
+    box-sizing: border-box;
+    box-shadow: rgb(0 0 0 / 50%) 0px 2px 4px;
+  }
+
+  button[slot="hotspot-hand"]{
+    --min-hotspot-opacity: 0;
+    background-color: white;
+  }
+
+
+  #annotation{
+    background: rgb(255, 255, 255);
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 25%) 0px 2px 4px;
+    color: rgba(0, 0, 0, 0.8);
+    display: block;
+    font-family: Futura, "Helvetica Neue", sans-serif;
+    font-size: 6px;
+    font-weight: 700;
+    left: calc(100% + 1em);
+    max-width: 128px;
+    overflow-wrap: break-word;
+    padding: 0.5em 1em;
+    position: absolute;
+    top: 50%;
+    width: max-content;
+  }
+
   
