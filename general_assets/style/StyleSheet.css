@@ -89,7 +89,7 @@
 }
 
 
- button{
+ .Hotspot{
     display: block;
     width: 12px;
     height: 12px;
@@ -98,11 +98,11 @@
     background-color: white;
     box-sizing: border-box;
     box-shadow: rgb(0 0 0 / 50%) 0px 2px 4px;
+
   }
 
-  button[slot="hotspot-hand"]{
-    --min-hotspot-opacity: 0;
-    background-color: white;
+  .Hotspot[slot="hotspot-hand"]{
+   --min-hotspot-opacity: 0; 
   }
 
 
