@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Jet</title>
+  <title>Painting</title>
   <meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <link rel="stylesheet" href="./general_assets/style/StyleSheet.css">
@@ -24,18 +24,11 @@
       src="assets/3d-model/model.glb"
       id="model" 
       reveal="auto"
-      ar ar-modes="webxr scene-viewer quick-look" ar-scale="10"
-      camera-controls enable-pan 
-      camera-orbit="42.91deg 83.17deg auto"
+      ar ar-modes="webxr scene-viewer quick-look" ar-placement="wall"
+      camera-controls
+      camera-orbit="90deg 90deg auto"
       environment-image="neutral"
       shadow-intensity="1">
-
-      <button class="Hotspot" slot="hotspot-hand" data-position="0.01m 0.95m 0.03m" data-normal="0m -1m 0m">
-        <div id="annotation">Retractable Rear</div>
-      </button>
-
-
-
       <div id="table-poster" slot="poster"></div>
       <button slot="ar-button" id="ar-button"></button>
 
